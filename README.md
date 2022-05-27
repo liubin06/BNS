@@ -1,9 +1,9 @@
-#Bayesian Negative Sampling
+====Bayesian Negative Sampling
 
 ## Required Packages
 - numpy
 - pytorch
->Implement [BNS](https://doi.org/10.48550/arXiv.2204.06520)(Bin Liu & Bang Wang, 2022) for Matrix Factorization (MF) (run main_MF.py); 
+>Implement [BNS](https://doi.org/10.48550/arXiv.2204.06520)(Bin Liu & Bang Wang, 2022) for Matrix Factorization (MF) (run main_MF.py); <br>
 >Implement BNS for light Graph Convolution Network (LightGCN) (Xiangnan et al. 2020) (run main_lightGCN.py).
 
 ## Dataset describe: 
