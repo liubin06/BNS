@@ -20,7 +20,8 @@ $$ F_{n}(\hat{x} _ l) = \frac{1}{n} \sum  I_ {|x_ \cdot \leq \hat{x}_l |} $$
 >>The empirical distribution function $F_n (\cdot)$  converges to common cumulative distribution function $F(\cdot)$ almost surely by the **strong law of large numbers**. **Glivenko Theorem** (1933) strengthened this result by proving **uniform convergence** of $F_n(\cdot)$ to $F(\cdot)$. This property makes it possible for us to compute the $F(\cdot)$, even if we do not know its explicit expression. Given the observation $\hat{x}_l$, $F(\hat{x}_l)$ describes the joint probability of the observed instance $\hat{x}_l$ as a function of the parameters of the ranking model. For the specific parameter $l \in fn$, $F(\hat{x}_l)$ assigns a probabilistic prediction valued in $[0,1]$ of $l$ being false negative (positive).<br>
 
 >### (iii) Computing  negative signal (posterior probability) 
-$$ \mathtt{unbias}(l) = \frac{[1 - F(\hat{x} _ l)] [1-P _ {fn} (l)] }{1 - F(\hat{x}_ l) -P_{fn}(l) + 2F(\hat{x}_ l)P_{fn}(l)} $$
+$$ \mathtt{unbias}(l) = \frac{[1 - F(\hat{x} _ l)] [1-P _ {fn} (l)] }{1 - F(\hat{x}_ l) -P_{fn}(l) + 2F(\hat{x}_ l)P_{fn}(l)} $$!
+![fig3](https://github.com/liubin06/test/raw/master/fig3.png)
 >>Note $\mathtt{unbias}(j)$ is an unbiased estimator for $l$ being true negative (see Lemma 3.1). This step needs $\mathcal{O}(1)$.
 
 >### (iv) Performing Bayesian negative sampling
