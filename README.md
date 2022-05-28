@@ -1,10 +1,8 @@
 # Bayesian Negative Sampling
 
 ## Required Packages
-- numpy
-- pytorch
->Implement [BNS](https://doi.org/10.48550/arXiv.2204.06520) for Matrix Factorization (MF) (run main_MF.py); <br>
->Implement [BNS](https://doi.org/10.48550/arXiv.2204.06520) for light Graph Convolution Network (LightGCN) (Xiangnan et al. 2020) (run main_lightGCN.py).
+- numpy  : Implement [BNS](https://doi.org/10.48550/arXiv.2204.06520) for Matrix Factorization (MF) (run main_MF.py); 
+- pytorch: Implement [BNS](https://doi.org/10.48550/arXiv.2204.06520) for light Graph Convolution Network (LightGCN) (run main_lightGCN.py).
 
 ## About BNS Framework:
 We summarize the proposed negative sampling algorithm as: for each negative instances in the samll candidate set $\mathcal{M}_u$:
@@ -15,11 +13,11 @@ $$P_{fn}(l) = \frac{pop_l}{N}$$
 >>This step needs $\mathcal{O}(1)$.
 
 
->### (ii) Computing cumulative distribution function (likelyhood) 
+>### (ii) Computing cumulative distribution function (likelihood) 
 $$ F_{n}(\hat{x} _ l) = \frac{1}{n} \sum _ l I_ {|X_ \cdot \leq \hat{x}_ l |} $$
 >>This step needs $\mathcal{O}(|\mathcal{I}|)$.
   
->>The calculation of empirical distribution function is easy to implement, which  converges to common cumulative distribution function $F(x)$ almost surely by the strong law of large numbers. **Glivenko Theorem** (1933) strengthened this result by proving uniform convergence of $F_n(\cdot)$ to $F(\cdot)$. This property of $F_n(\cdot)$ makes it possible for us to compute the $F(\cdot)$, even if we do not know its explicit expression. $F(\hat{x}_l)$ describes the joint probability of the observed instance $\hat{x}_l$ as a function of the parameters of the ranking model. For the specific parameter $l \in fn$, $F(\hat{x}_l)$ assigns a probabilistic prediction valued in $[0,1]$ of $l$ being false negative (positive).<br>
+>>The calculation of empirical distribution function is easy to implement, which  converges to common cumulative distribution function $F(x)$ almost surely by the strong law of large numbers. **Glivenko Theorem** (1933) strengthened this result by proving uniform convergence of $F_n(\cdot)$ to $F(\cdot)$. This property of $F_n(\cdot)$ makes it possible for us to compute the $F(\cdot)$, even if we do not know its explicit expression. Given the observation $\hat{x}_l$, $F(\hat{x}_l)$ describes the joint probability of the observed instance $\hat{x}_l$ as a function of the parameters of the ranking model. For the specific parameter $l \in fn$, $F(\hat{x}_l)$ assigns a probabilistic prediction valued in $[0,1]$ of $l$ being false negative (positive).<br>
 
 >### (iii) Computing  negative signal (posterior probability) 
 $$ \mathtt{unbias}(l) = \frac{[1 - F(\hat{x} _ l)] [1-P _ {fn} (l)] }{1 - F(\hat{x}_ l) -P_{fn}(l) + 2F(\hat{x}_ l)P_{fn}(l)} $$
@@ -34,4 +32,4 @@ More details about BNS(Bin Liu & Bang Wang, 2022) see our paper or poster at htt
 ## Dataset describe: 
 >MovieLens100K; More details about MovieLens datasets at https://grouplens.org/datasets/movielens .<br>
 
->Our Bayesian Negative Sampling algothrim does not depend on the datasets. Just split the dataset you are interested in into the training set and test set, replace the train.csv and test.csv files, you can run Bayesian negative sampling easily. You just need to make sure that you have chosen appropriate prior information for **modeling prior probability** $P_{TN}(\cdot)$ or $P_{FN}(\cdot)$.
+>Our Bayesian Negative Sampling algothrim does not depend on the datasets. Just split the dataset you are interested in into the training set and test set, replace the train.csv and test.csv files, you can run Bayesian negative sampling easily. You just need to make sure that you have chosen appropriate prior information for **modeling prior probability** $P_{tn}(\cdot)$ or $P_{fn}(\cdot)$.
