@@ -39,12 +39,12 @@ More details about BNS(Bin Liu & Bang Wang, 2022) see our paper or poster at htt
 
 > Real distribution
 <div align=center>
-<img src="https://github.com/liubin06/test/raw/master/fig1.png">
+<img src="https://github.com/liubin06/test/raw/master/fig11.png">
 </div>
 
 > Theoretical distribution
 > <div align=center>
-<img src="https://github.com/liubin06/test/raw/master/fig2.png">
+<img src="https://github.com/liubin06/test/raw/master/fig22.png">
 </div>
 
 > Fig3 exhibits the distribution morphology of false negatives and true negatives derived from the ordinal relation with different types of $f(x)$: Gaussian distribution $x \sim \mathcal{N}(\mu,\sigma)$ (symmetrical), student distribution $x \sim t(n)$ (symmetrical), and Gamma distribution $x\sim Ga(\alpha,\lambda)$ (asymmetrical) . As we can see, during the training process, the actual distribution of true/false negatives in Fig~\ref{Fig:DistributionStatistics}  gradually exhibit the same structure as depicted in Fig2. <br>
