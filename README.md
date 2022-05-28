@@ -5,7 +5,7 @@
 - pytorch: Implement [BNS](https://doi.org/10.48550/arXiv.2204.06520) for light Graph Convolution Network (LightGCN) (run main_lightGCN.py).
 
 ## About BNS Framework:
-We summarize the proposed negative sampling algorithm as: Randomly select a small set of candidates $\mathcal{M}_u$ from the negative instances set $\mathcal{I}_u^-$, for each negative instances $L$ in the samll candidate set $\mathcal{M}_u$:
+We summarize the proposed negative sampling algorithm as: Randomly select a small set of candidates $\mathcal{M}_u$ from the negative instances set $\mathcal{I}_u^-$, for each negative instances $l$ in the samll candidate set $\mathcal{M}_u$:
 
 >### (i) Computing prior probability
 >>By assuming $pop_l \sim B (N, P_{fn}(l))$, we compute prior probability as:
