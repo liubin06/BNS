@@ -1,3 +1,6 @@
+# Implement BNS for Matrix Factorization
+# @author Bin Liu, Bang Wang 
+
 import random
 import numpy as np
 import pandas as pd
@@ -26,7 +29,6 @@ def load_data(path):
     return u_count,i_count,u_list,i_list
 
 u_count,i_count,u_list,i_list = load_data(project_data)
-
 
 def load_train(path):
     train_data = pd.read_csv(path,
@@ -60,7 +62,7 @@ def load_train(path):
 
 train_dict,prior,popularity,datapair,negative_items_dict, negative_index_dict= load_train(train_data)
 
-
+# load test data as np.array
 def load_test(path):
     test_data = pd.read_csv(path,
                             header=0,
@@ -80,6 +82,7 @@ def sigmoid(x):
     else:
         return np.exp(x) /(1+np.exp(x))
 
+#training 
 class BPRMF:
     lr = 0.01
     reg = 0.01
@@ -105,7 +108,7 @@ class BPRMF:
                 negative_items = negative_items_dict[u]
                 negative_index = negative_index_dict[u]
                 rating_vector = np.array(np.mat(self.U[int(u)]) * np.mat(self.V.T))[0]
-                ### STARTING NEGATIVE SAMPLING
+                ################### STARTING NEGATIVE SAMPLING ################### 
                 size = 5
                 alpha = 5
                 j = ns.bns(i,negative_items, negative_index, rating_vector,prior, size, alpha)
@@ -121,6 +124,6 @@ class BPRMF:
             print(evaluation.topk(score, label, 10))
             print(evaluation.topk(score, label, 20))
         return  evaluation.erase(np.mat(self.U) * np.mat(self.V.T),train_dict),np.mat(self.U),np.mat(self.V)
-
+# rating matirx and embeddings
 score,U,V= BPRMF().train(datapair)
 
