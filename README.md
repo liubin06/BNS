@@ -35,7 +35,7 @@ $$ j  =  \mathop{\arg\min}\limits_{l \in\mathcal{M}_u}~ \mathtt{info}(l)\cdot [1
 More details about BNS(Bin Liu & Bang Wang, 2022) see our paper or poster at https://doi.org/10.48550/arXiv.2204.06520 .
 
 ## Distribution Analysis
->On the basis of order relation analysis of negatives' scores, we derive the class conditional density of true negatives and that of false negatives, and provide an affirmative answer from a Bayesian viewpoint to distinguish true negatives from false negatives. 
+> The key to the BNS is the class conditional density. On the basis of order relation analysis of negatives' scores, we derive the class conditional density of true negatives and that of false negatives, and provide an affirmative answer from a Bayesian viewpoint to distinguish true negatives from false negatives. 
 
 > Real distribution
 <div align=center>
@@ -46,6 +46,8 @@ More details about BNS(Bin Liu & Bang Wang, 2022) see our paper or poster at htt
 > <div align=center>
 <img src="https://github.com/liubin06/test/raw/master/fig2.png">
 </div>
+
+> Fig3 exhibits the distribution morphology of false negatives and true negatives derived from the ordinal relation with different types of $f(x)$: Gaussian distribution $x \sim \mathcal{N}(\mu,\sigma)$ (symmetrical), student distribution $x \sim t(n)$ (symmetrical), and Gamma distribution $x\sim Ga(\alpha,\lambda)$ (asymmetrical) . As we can see, during the training process, the actual distribution of true/false negatives in Fig~\ref{Fig:DistributionStatistics}  gradually exhibit the same structure as depicted in Fig2. <br>
 
 ## Dataset Description: 
 >MovieLens100K; More details about MovieLens datasets at https://grouplens.org/datasets/movielens .<br>
