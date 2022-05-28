@@ -21,7 +21,11 @@ $$ F_{n}(\hat{x} _ l) = \frac{1}{n} \sum  I_ {|x_ \cdot \leq \hat{x}_l |} $$
 
 >### (iii) Computing  negative signal (posterior probability) 
 $$ \mathtt{unbias}(l) = \frac{[1 - F(\hat{x} _ l)] [1-P _ {fn} (l)] }{1 - F(\hat{x}_ l) -P_{fn}(l) + 2F(\hat{x}_ l)P_{fn}(l)} $$!
-![fig3](https://github.com/liubin06/test/raw/master/fig3.png)
+
+<div align=center>
+<img src="https://github.com/liubin06/test/raw/master/fig3.png">
+</div>
+
 >>Note $\mathtt{unbias}(j)$ is an unbiased estimator for $l$ being true negative (see Lemma 3.1). This step needs $\mathcal{O}(1)$.
 
 >### (iv) Performing Bayesian negative sampling
