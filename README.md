@@ -34,7 +34,20 @@ $$ j  =  \mathop{\arg\min}\limits_{l \in\mathcal{M}_u}~ \mathtt{info}(l)\cdot [1
 
 More details about BNS(Bin Liu & Bang Wang, 2022) see our paper or poster at https://doi.org/10.48550/arXiv.2204.06520 .
 
-## Dataset describe: 
+## Distribution Analysis
+>On the basis of order relation analysis of negatives' scores, we derive the class conditional density of true negatives and that of false negatives, and provide an affirmative answer from a Bayesian viewpoint to distinguish true negatives from false negatives. 
+
+> Real distribution
+<div align=center>
+<img src="https://github.com/liubin06/test/raw/master/fig1.png">
+</div>
+
+> Theoretical distribution
+> <div align=center>
+<img src="https://github.com/liubin06/test/raw/master/fig2.png">
+</div>
+
+## Dataset Description: 
 >MovieLens100K; More details about MovieLens datasets at https://grouplens.org/datasets/movielens .<br>
 
 >Our Bayesian Negative Sampling algothrim does not depend on the datasets. Just split the dataset you are interested in into the training set and test set, replace the train.csv and test.csv files, you can run Bayesian negative sampling easily. You just need to make sure that you have chosen appropriate prior information for **modeling prior probability** $P_{tn}(\cdot)$ or $P_{fn}(\cdot)$.
