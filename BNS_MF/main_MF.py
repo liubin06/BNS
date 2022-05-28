@@ -125,5 +125,8 @@ class BPRMF:
             print(evaluation.topk(score, label, 20))
         return  evaluation.erase(np.mat(self.U) * np.mat(self.V.T),train_dict),np.mat(self.U),np.mat(self.V)
 # rating matirx and embeddings
+
 score,U,V= BPRMF().train(datapair)
+
+
 
