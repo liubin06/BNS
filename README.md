@@ -47,7 +47,7 @@ More details about BNS(Bin Liu & Bang Wang, 2022) see our paper or poster at htt
 <img src="https://github.com/liubin06/test/raw/master/fig22.png">
 </div>
 
-> We exhibits the distribution morphology of false negatives and true negatives derived from the ordinal relation with different types of $f(x)$: Gaussian distribution $x \sim \mathcal{N}(\mu,\sigma)$ (symmetrical), student distribution $x \sim t(n)$ (symmetrical), and Gamma distribution $x\sim Ga(\alpha,\lambda)$ (asymmetrical) . As we can see, during the training process, the actual distribution of true/false negatives gradually exhibit the same structure as theoretical distribution. Although the probability density function $f(x)$ changes during the training process, this separated structure is sufficient for us to classify the true negative instances from false negative instances. <br>
+> We exhibits the distribution morphology of false negatives and true negatives derived from the ordinal relation with different types of $f(x)$: Gaussian distribution $x \sim \mathcal{N}(\mu,\sigma)$ (symmetrical), student distribution $x \sim t(n)$ (symmetrical), and Gamma distribution $x\sim Ga(\alpha,\lambda)$ (asymmetrical) . As we can see, during the training process, the real distribution of true/false negatives gradually exhibit the same structure as theoretical distribution. Although the probability density function $f(x)$ changes during the training process, this separated structure is sufficient for us to classify the true negative instances from false negative instances. <br>
 
 ## Dataset Description: 
 >MovieLens100K; MovieLens1M; Yahoo!-R3.<br>
