@@ -5,7 +5,7 @@
 - pytorch: Implement [BNS](https://doi.org/10.48550/arXiv.2204.06520) for light Graph Convolution Network (LightGCN) (run main_lightGCN.py).
 
 ## About BNS Framework:
-We summarize the proposed negative sampling algorithm as: Randomly select a small set of candidates $\mathcal{M}_u$ from the negative instances set $\mathcal{I}_u^-$, for each negative instances $l$ in the samll candidate set $\mathcal{M}_u$:
+We summarize the Bayesian negative sampling algorithm as: Randomly select a small set of candidates $\mathcal{M}_u$ from the negative instances set $\mathcal{I}_u^-$, for each negative instances $l$ in the samll candidate set $\mathcal{M}_u$:
 
 >### (i) Computing prior probability
 >>By assuming $pop_l \sim B (N, P_{fn}(l))$, we compute prior probability as:
@@ -20,7 +20,7 @@ $$ F_{n}(\hat{x} _ l) = \frac{1}{n} \sum  I_ {|x_ \cdot \leq \hat{x}_l |} $$
 >>The empirical distribution function $F_n (\cdot)$  converges to common cumulative distribution function $F(\cdot)$ almost surely by the **strong law of large numbers**. **Glivenko Theorem** (1933) strengthened this result by proving **uniform convergence** of $F_n(\cdot)$ to $F(\cdot)$. This property makes it possible for us to compute the $F(\cdot)$, even if we do not know its explicit expression. Given the observation $\hat{x}_l$, $F(\hat{x}_l)$ describes the joint probability of the observed instance $\hat{x}_l$ as a function of the parameters of the ranking model. For the specific parameter $l \in fn$, $F(\hat{x}_l)$ assigns a probabilistic prediction valued in $[0,1]$ of $l$ being false negative (positive).<br>
 
 >### (iii) Computing  negative signal (posterior probability) 
-$$ \mathtt{unbias}(l) = \frac{[1 - F(\hat{x} _ l)] [1-P _ {fn} (l)] }{1 - F(\hat{x}_ l) -P_{fn}(l) + 2F(\hat{x}_ l)P_{fn}(l)} $$!
+$$ \mathtt{unbias}(l) = \frac{[1 - F(\hat{x} _ l)] [1-P _ {fn} (l)] }{1 - F(\hat{x}_ l) -P_{fn}(l) + 2F(\hat{x}_ l)P_{fn}(l)} $$
 
 <div align=center>
 <img src="https://github.com/liubin06/test/raw/master/fig3.png">
@@ -35,21 +35,23 @@ $$ j  =  \mathop{\arg\min}\limits_{l \in\mathcal{M}_u}~ \mathtt{info}(l)\cdot [1
 More details about BNS(Bin Liu & Bang Wang, 2022) see our paper or poster at https://doi.org/10.48550/arXiv.2204.06520 .
 
 ## Distribution Analysis
-> The key to the BNS is the class conditional density. On the basis of order relation analysis of negatives' scores, we derive the class conditional density of true negatives and that of false negatives, and provide an affirmative answer from a Bayesian viewpoint to distinguish true negatives from false negatives. 
+> The key is the class conditional density. On the basis of order relation analysis of negatives' scores, we derive the class conditional density of true negatives and that of false negatives, and provide an affirmative answer from a Bayesian viewpoint to distinguish true negatives from false negatives. 
 
-> Real distribution
+**Real distribution**
 <div align=center>
 <img src="https://github.com/liubin06/test/raw/master/fig11.png">
 </div>
 
-> Theoretical distribution
+**Theoretical distribution**
 > <div align=center>
 <img src="https://github.com/liubin06/test/raw/master/fig22.png">
 </div>
 
-> Fig3 exhibits the distribution morphology of false negatives and true negatives derived from the ordinal relation with different types of $f(x)$: Gaussian distribution $x \sim \mathcal{N}(\mu,\sigma)$ (symmetrical), student distribution $x \sim t(n)$ (symmetrical), and Gamma distribution $x\sim Ga(\alpha,\lambda)$ (asymmetrical) . As we can see, during the training process, the actual distribution of true/false negatives in Fig~\ref{Fig:DistributionStatistics}  gradually exhibit the same structure as depicted in Fig2. <br>
+> We exhibits the distribution morphology of false negatives and true negatives derived from the ordinal relation with different types of $f(x)$: Gaussian distribution $x \sim \mathcal{N}(\mu,\sigma)$ (symmetrical), student distribution $x \sim t(n)$ (symmetrical), and Gamma distribution $x\sim Ga(\alpha,\lambda)$ (asymmetrical) . As we can see, during the training process, the actual distribution of true/false negatives gradually exhibit the same structure as theoretical distribution. Although the probability density function $f(x)$ changes during the training process, this separated structure is sufficient for us to classify the true negative instances from false negative instances. <br>
 
 ## Dataset Description: 
->MovieLens100K; More details about MovieLens datasets at https://grouplens.org/datasets/movielens .<br>
+>MovieLens100K; MovieLens1M; Yahoo!-R3.<br>
+- More details about MovieLens datasets at https://grouplens.org/datasets/movielens .<br>
+- More details about Yahoo datasets at http://webscope.sandbox.yahoo.com/catalog.php?datatype=r .<br>
 
 >Our Bayesian Negative Sampling algothrim does not depend on the datasets. Just split the dataset you are interested in into the training set and test set, replace the train.csv and test.csv files, you can run Bayesian negative sampling easily. You just need to make sure that you have chosen appropriate prior information for **modeling prior probability** $P_{tn}(\cdot)$ or $P_{fn}(\cdot)$.
