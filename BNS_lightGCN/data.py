@@ -18,7 +18,7 @@ class Data(object):
             self.train_user = [pair[0] for pair in self.train_pair]
             self.train_item = [pair[1] for pair in self.train_pair]
             self.length = len(self.train_pair)
-            # 用稀疏矩阵构建用户-物品二分图
+           
             self.UserItemNet = csr_matrix((np.ones(len(self.train_user)), (self.train_user, self.train_item)),
                                           shape=(self.num_user, self.num_item))
             self.Lap_mat, self.Adj_mat = self.build_graph()
