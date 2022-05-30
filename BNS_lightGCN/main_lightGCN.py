@@ -187,10 +187,10 @@ def topk_eval(score, label, k):
         user_score = score[user_no].tolist()
         user_label = label[user_no].tolist()
         label_count = int(sum(user_label))
-        topn_recommend_score = heapq.nlargest(k, user_score)  # 最高的分数
+        topn_recommend_score = heapq.nlargest(k, user_score)  
         topn_recommend_index = [user_score.index(i) for i in
                                 topn_recommend_score]  # map(user_score.index,topn_recommend_score)
-        topn_recommend_label = [user_label[i] for i in topn_recommend_index]  # 标签
+        topn_recommend_label = [user_label[i] for i in topn_recommend_index]  
         idcg = discountlist[0:label_count]
 
         if label_count == 0:
