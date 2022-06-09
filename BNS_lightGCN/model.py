@@ -63,7 +63,7 @@ class LightGCNWithNG(nn.Module):
         return 1/(1+np.exp(-x))
 
 
-    def proposed_negative_sample(self, users,items, ui_scores):
+    def bns(self, users,items, ui_scores):
         batch_size = users.size(0)
         if self.device == 'cpu':
             users = users.detach().numpy()
@@ -104,7 +104,7 @@ class LightGCNWithNG(nn.Module):
         items_emb = all_items_emb[items]    # bs * d
 
         ui_scores = torch.mm(users_emb, all_items_emb.t())  # bs * |V|
-        negatives = self.proposed_negative_sample(users,items, ui_scores)  # bs
+        negatives = self.bns(users,items, ui_scores)  # bs
         neg_item_emb = all_items_emb[negatives]  # bs * d
 
         pos_scores = torch.mul(users_emb, items_emb)
