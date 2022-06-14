@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+# Implement BNS for light Graph Convolution Network
 
 import argparse
 import time
