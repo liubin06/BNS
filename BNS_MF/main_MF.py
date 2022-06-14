@@ -1,5 +1,5 @@
+#-*- coding: utf-8 -*-
 # Implement BNS for Matrix Factorization
-# @author Bin Liu, Bang Wang 
 
 import random
 import numpy as np
