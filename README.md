@@ -5,7 +5,7 @@
 - pytorch: Implement [BNS](https://doi.org/10.48550/arXiv.2204.06520) for light Graph Convolution Network (LightGCN) (run [main_lightGCN.py](https://github.com/liubin06/BNS/blob/main/BNS_lightGCN/main_lightGCN.py) ).
 
 ## About BNS Framework:
-We summarize the Bayesian negative sampling algorithm as: Randomly select a small set of candidates $\mathcal{M}_u$ from the negative instances set $\mathcal{I}_u^-$, for each negative instances $l$ in the samll candidate set $\mathcal{M}_u$:
+We summarize the Bayesian negative sampling algorithm as: Randomly select a small set of candidates $\mathcal{M}_u$ from the negative instances set, for each negative instances $l \in \mathcal{M}_u$ do:
 
 >### (i) Computing prior probability
 >>By assuming $pop_l \sim B (N, P_{fn}(l))$, we compute prior probability as:
@@ -21,16 +21,20 @@ $$ F_{n}(\hat{x} _ l) = \frac{1}{n} \sum  I_ {|x_ \cdot \leq \hat{x}_l |} $$
 
 >### (iii) Computing  negative signal (posterior probability) 
 $$ \mathtt{unbias}(l) = \frac{[1 - F(\hat{x} _ l)] [1-P _ {fn} (l)] }{1 - F(\hat{x}_ l) -P_{fn}(l) + 2F(\hat{x}_ l)P_{fn}(l)} $$
+>>Note that $\mathtt{unbias}(l)$ is an unbiased estimator for $l$ being true negative (see Lemma 3.1). 
+>>This step needs $\mathcal{O}(1)$.
+
 
 <div align=center>
 <img src="https://github.com/liubin06/test/raw/master/fig3.png">
 </div>
 
->>Note $\mathtt{unbias}(j)$ is an unbiased estimator for $l$ being true negative (see Lemma 3.1). This step needs $\mathcal{O}(1)$.
-
 >### (iv) Performing Bayesian negative sampling
 $$ j  =  \mathop{\arg\min}\limits_{l \in\mathcal{M}_u}~ \mathtt{info}(l)\cdot [1-(1+\lambda)\mathtt{unbias}(l)]$$
->>If the sampler $h^*$ minimizes the conditional sampling risk $R(l|i)$, then the empirical sampling risk will be minimized (see Theorem 3.1). Thus the Bayesian optimal sampling rule is essentially sampling the instance with minimal conditional sampling risk.This step needs $\mathcal{O}(1)$. <br>
+
+>> If the sampler $h^*$ minimizes the conditional sampling risk $R(l|i)$, then the empirical sampling risk will be minimized (see Theorem 3.1). 
+>> Thus the Bayesian optimal sampling rule is essentially sampling the instance with minimal conditional sampling risk.
+>> This step needs $\mathcal{O}(1)$. <br>
 
 More details about BNS(Bin Liu & Bang Wang, 2022) see our paper or poster at https://doi.org/10.48550/arXiv.2204.06520 .
 
