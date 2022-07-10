@@ -17,7 +17,10 @@ $$P_{fn}(l) = \frac{pop_l}{N}$$
 $$ F_{n}(\hat{x} _ l) = \frac{1}{n} \sum  I_ {|x_ \cdot \leq \hat{x}_l |} $$
 >>This step needs $\mathcal{O}(|\mathcal{I}|)$.
   
->>The empirical distribution function $F_n (\cdot)$  converges to common cumulative distribution function $F(\cdot)$ almost surely by the **strong law of large numbers**. **Glivenko Theorem** (1933) strengthened this result by proving **uniform convergence** of $F_n(\cdot)$ to $F(\cdot)$. This property makes it possible for us to compute the $F(\cdot)$, even if we do not know its explicit expression. Given the observation $\hat{x}_l$, $F(\hat{x}_l)$ describes the joint probability of the observed instance $\hat{x}_l$ as a function of the parameters of the ranking model. For the specific parameter $l \in fn$, $F(\hat{x}_l)$ assigns a probabilistic prediction valued in $[0,1]$ of $l$ being false negative (positive).<br>
+>>The empirical distribution function $F_n (\cdot)$  converges to common cumulative distribution function $F(\cdot)$ almost surely by the **strong law of large numbers**. **Glivenko Theorem** (1933) strengthened this result by proving **uniform convergence** of $F_n(\cdot)$ to $F(\cdot)$. This property makes it possible for us to compute the $F(\cdot)$, even if we do not know its explicit expression. 
+>> Given the observation $\hat{x}$, $F(\hat{x})$  
+>> assigns a probabilistic prediction valued in $[0,1]$ 
+>> of $l$ being false negative (positive).<br>
 
 >### (iii) Computing  negative signal (posterior probability) 
 $$ \mathtt{unbias}(l) = \frac{[1 - F(\hat{x} _ l)] [1-P _ {fn} (l)] }{1 - F(\hat{x}_ l) -P_{fn}(l) + 2F(\hat{x}_ l)P_{fn}(l)} $$
