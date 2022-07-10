@@ -1,8 +1,8 @@
 # Bayesian Negative Sampling
 
 ## Required Packages
-- numpy  : Implement [BNS](https://doi.org/10.48550/arXiv.2204.06520) for Matrix Factorization (MF) (run [main_MF.py](https://github.com/liubin06/BNS/blob/main/BNS_MF/main_MF.py) ); 
-- pytorch: Implement [BNS](https://doi.org/10.48550/arXiv.2204.06520) for light Graph Convolution Network (LightGCN) (run [main_lightGCN.py](https://github.com/liubin06/BNS/blob/main/BNS_lightGCN/main_lightGCN.py) ).
+- numpy  : Implement BNS for Matrix Factorization (MF) (run [main_MF.py](https://github.com/liubin06/BNS/blob/main/BNS_MF/main_MF.py) ); 
+- pytorch: Implement BNS for light Graph Convolution Network (LightGCN) (run [main_lightGCN.py](https://github.com/liubin06/BNS/blob/main/BNS_lightGCN/main_lightGCN.py) ).
 
 ## About BNS Framework:
 We summarize the Bayesian negative sampling algorithm as: Randomly select a small set of candidates $\mathcal{M}_u$ from the negative instances set, for each negative instances $l \in \mathcal{M}_u$ do:
