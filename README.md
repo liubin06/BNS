@@ -39,6 +39,7 @@ $$ j  =  \mathop{\arg\min}\limits_{l \in\mathcal{M}_u}~ \mathtt{info}(l)\cdot [1
 >> Thus the Bayesian optimal sampling rule is essentially sampling the instance with minimal conditional sampling risk.
 >> This step needs $\mathcal{O}(1)$. <br>
 
+If you have any questions, please feel free to contact contact **"wangbang@hust.edu.cn; liubin0606@hust.edu.cn"**.
 More details about BNS(Bin Liu & Bang Wang, 2022) see our paper or poster at https://doi.org/10.48550/arXiv.2204.06520 .
 
 ## Distribution Analysis
