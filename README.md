@@ -1,5 +1,18 @@
 # Bayesian Negative Sampling
+**Accepted by International Conference on Data Engineering (ICDE 2023)**
+> @INPROCEEDINGS{Bin:ICDE:2023,
 
+> author={Liu, Bin and Wang, Bang},  
+
+> booktitle={2023 IEEE 39th International Conference on Data Engineering (ICDE)}, 
+
+> title={Bayesian Negative Sampling for Recommendation}, 
+  
+> year={2023},
+  
+> pages={749-761},
+
+> doi={10.1109/ICDE55515.2023.00063}}
 ## Required Packages
 - numpy  : Implement BNS for Matrix Factorization (MF) (run [main_MF.py](https://github.com/liubin06/BNS/blob/main/BNS_MF/main_MF.py) ); 
 - pytorch: Implement BNS for light Graph Convolution Network (LightGCN) (run [main_lightGCN.py](https://github.com/liubin06/BNS/blob/main/BNS_lightGCN/main_lightGCN.py) ).
