@@ -1,6 +1,6 @@
 # Bayesian Negative Sampling
 
-This work is accepted for publication in [***IEEE International Conference on Data Engineering (ICDE 2023)***](10.1109/ICDE55515.2023.00063) . Should you use this work in your research, please cite the following paper:
+This work is accepted for publication in [***IEEE International Conference on Data Engineering (ICDE 2023)***](https://ieeexplore.ieee.org/document/10184562). Should you use this work in your research, please cite the following paper:
 
 
 ```bibtex
